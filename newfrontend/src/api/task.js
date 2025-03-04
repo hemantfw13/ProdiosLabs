@@ -1,15 +1,15 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:1010/task"; // Ensure correct API path
+const API_URL = "https://prodiosbackend-1.onrender.com/task"; 
 
 export const fetchTasks = async () => {
     try {
         const res = await axios.get(API_URL, { withCredentials: true });
-        console.log("Fetched tasks:", res.data); // Debugging log
+        console.log("Fetched tasks:", res.data); 
         return res.data;
     } catch (error) {
         console.error("Error fetching tasks:", error);
-        return []; // Return empty array to prevent crashes
+        return [];
     }
 };
 

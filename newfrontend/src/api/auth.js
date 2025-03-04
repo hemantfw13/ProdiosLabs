@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:1010/user"; 
+const API_URL = "https://prodiosbackend-1.onrender.com/user"; 
 
 export const loginUser = async (email, password) => {
     const res = await axios.post(`${API_URL}/login`, { email, password }, { withCredentials: true });

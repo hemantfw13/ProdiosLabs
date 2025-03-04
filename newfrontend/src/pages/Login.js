@@ -25,7 +25,7 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try{
-            await axios.post("http://localhost:1010/user/login", { email, password });
+            await axios.post("https://prodiosbackend-1.onrender.com/user/login", { email, password });
             navigate("/board");
         }
         catch(e){

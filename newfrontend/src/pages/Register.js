@@ -10,7 +10,7 @@ const Register = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:1010/user/signup", { name, email, password });
+        await axios.post("https://prodiosbackend-1.onrender.com/user/signup", { name, email, password });
         navigate("/");
     };
 
