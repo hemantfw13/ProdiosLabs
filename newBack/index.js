@@ -6,14 +6,22 @@ const { taskRouter } = require("./routes/task.route");
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "https://newfrontend-7mzy4k346-hemantfw13s-projects.vercel.app", 
-    credentials: true, 
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+const corsOptions = {
+  origin: [
+    "https://newfrontend-7mzy4k346-hemantfw13s-projects.vercel.app",
+    "http://localhost:3000", 
+    "https://localhost:3000"
+  ],
+  credentials: true, 
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], 
+  allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Origin"],
+};
+
+app.use(cors(corsOptions));
+
+app.options('*', cors(corsOptions));
+
+// app.use(cors())
 
 app.use(express.json());
 
